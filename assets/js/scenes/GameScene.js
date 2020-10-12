@@ -4,6 +4,10 @@ class GameScene extends Phaser.Scene {
         super('Game');
     }
 
+    init(data) {
+        this.playerCount = data.playerCount;
+    }
+
     // Phaser life cycle function for create and instance of the assets.
     create() {
         // create the background image then set it's origin point
@@ -15,7 +19,37 @@ class GameScene extends Phaser.Scene {
         // create an instance of the infections marker
         const infectionMarker = new InfectionsMarker(this, 772, 197, 'infectionMarkerImage');
 
+        this.setupPlayers();
         this.setLocations();
+    }
+
+    setupPlayers() {
+
+        const text = {
+            fontFamily : 'Times, serif',
+            fill: '#ff0000',
+            fontSize: '24px'
+        };
+
+        switch(this.playerCount) {
+            case 2: 
+                this.add.text(1225, 50, 'Player One', text);
+                this.add.text(1225, 125, 'Player Two', text);
+                break;
+            case 3: 
+                this.add.text(1225, 50, 'Player One', text);
+                this.add.text(1225, 125, 'Player Two', text);
+                this.add.text(1225, 200, 'Player Three', text);
+                break;
+            case 4: 
+                this.add.text(1225, 50, 'Player One', text);
+                this.add.text(1225, 125, 'Player Two', text);
+                this.add.text(1225, 200, 'Player Three', text);
+                this.add.text(1225, 275, 'Player Four', text);
+                break;
+            default:
+                break;
+        }
     }
 
     // temperary function to find x and y positions.

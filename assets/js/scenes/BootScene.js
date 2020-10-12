@@ -20,7 +20,7 @@ class BootScene extends Phaser.Scene {
 
     // Phaser life cycle function for create and instance of the assets.
     create() {
-        this.scene.start('Game');
+        this.scene.start('Title');
     }
 
     initializeLocations() {

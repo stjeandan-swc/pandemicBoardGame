@@ -2,7 +2,7 @@
 // Setup the game configuration Object
 const config = {
     type: Phaser.Auto,
-    width: 1200,
+    width: 1500,
     height: 849,
     scene: [
         BootScene,
